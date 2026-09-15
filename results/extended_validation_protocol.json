@@ -1,0 +1,51 @@
+{
+  "frozen_before_execution": true,
+  "created_utc": "2026-09-14",
+  "component_ablation": {
+    "seeds": [300, 329],
+    "conditions": {
+      "loads": [0.2, 0.4, 0.6, 0.8, 1.0, 1.2],
+      "tau_ms": [0.0, 10.0, 50.0],
+      "cv": [0.0, 0.5, 1.0]
+    },
+    "variants": [
+      "DA-BALS-EWMA",
+      "DA-BALS-EWMA-Cap",
+      "DA-BALS-EWMA-Decay",
+      "DA-BALS-Stabilized"
+    ],
+    "frozen_parameters": {
+      "alpha": 0.05,
+      "gamma": 0.75,
+      "delta_per_ms": 0.02,
+      "m_max_ms": 12.0
+    },
+    "primary_endpoint": "paired full-minus-reduced on-time completion fraction at rho=1.2, tau=50 ms, CV=1.0",
+    "primary_multiplicity": "Holm correction across the three component comparisons",
+    "secondary_analysis": "global Holm correction across 162 full-minus-reduced condition comparisons"
+  },
+  "hybrid_trace_replay": {
+    "source": "Microsoft Azure LLM inference trace 2023",
+    "license": "CC-BY-4.0",
+    "trace_fields": ["TIMESTAMP", "ContextTokens", "GeneratedTokens"],
+    "selection": "combine code and conversation traces, sort chronologically, and partition the first 18000 records into 30 non-overlapping 600-request blocks",
+    "replicates": 30,
+    "requests_per_replicate": 600,
+    "random_seeds": [500, 529],
+    "condition": {"rho": 1.2, "tau_ms": 50.0, "cv": 1.0},
+    "mapping": {
+      "arrival": "chronological inter-arrival spacings linearly rescaled to a 5000-ms horizon",
+      "uplink_work": "within-block ranks of ContextTokens mapped to 5--15 units",
+      "service_quantile": "within-block ranks of GeneratedTokens mapped to open-interval empirical quantiles",
+      "deadline": "fresh seeded Uniform(15,60) ms draw shared across policies",
+      "background": "existing seeded Poisson shared-cloud process"
+    },
+    "interpretation": "hybrid trace replay; production timestamps and token ranks are real, while scaling, deadlines, cloud-service calibration, and background work remain modeled"
+  },
+  "hardware_microbenchmark": {
+    "status": "protocol frozen; target device must be supplied by the author",
+    "metric": "decision-kernel time per request",
+    "reporting": ["median", "p95", "p99", "95% bootstrap confidence interval for median"],
+    "requirements": ["physical device model", "CPU", "memory", "OS", "Python version", "power mode", "warm-up", "single-process execution"]
+  }
+}

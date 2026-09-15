@@ -1,0 +1,29 @@
+{
+  "selected_parameters": {
+    "alpha": 0.05,
+    "gamma": 0.75,
+    "delta": 0.02,
+    "m_max": 12.0
+  },
+  "selection_objective": "success - 0.50*late - 0.10*shed - 0.02*normalized_network_waste",
+  "development_seeds": [
+    100,
+    114
+  ],
+  "development_conditions": {
+    "loads": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "tau_ms": [
+      10.0,
+      50.0
+    ],
+    "cv": [
+      0.5,
+      1.0
+    ]
+  },
+  "holdout_accessed": false
+}

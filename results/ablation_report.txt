@@ -1,0 +1,13 @@
+PRIMARY STRESS ABLATION MEANS
+                    on_time_mean_pct  late_mean_pct  shed_mean_pct
+policy                                                            
+DA-BALS-EWMA               69.652110       3.752104      26.595786
+DA-BALS-EWMA-Cap           69.652110       3.757395      26.590495
+DA-BALS-EWMA-Decay         69.624284       3.882014      26.493702
+DA-BALS-Stabilized         69.640694       3.887305      26.472001
+
+PAIRED FULL-MINUS-REDUCED COMPARISONS
+ load  tau_ms  cv    reduced_variant  pairs  mean_delta_pp  ci95_low_pp  ci95_high_pp  p_value  holm_p_value_global_162  holm_p_value_primary_3
+  1.2    50.0 1.0       DA-BALS-EWMA     30      -0.011416    -0.082953      0.060121 0.746477                      1.0                1.000000
+  1.2    50.0 1.0   DA-BALS-EWMA-Cap     30      -0.011416    -0.082953      0.060121 0.746477                      1.0                1.000000
+  1.2    50.0 1.0 DA-BALS-EWMA-Decay     30       0.016410    -0.007935      0.040754 0.178566                      1.0                0.535699

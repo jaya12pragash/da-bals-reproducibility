@@ -1,0 +1,19 @@
+TRACE INPUT SHA-256
+{
+  "AzureLLMInferenceTrace_code.csv": "54e9a6d2a4bd06ba1e060304b900abbc74cbea53de96506e60fe5bb4f2277fb6",
+  "AzureLLMInferenceTrace_conv.csv": "2f1e5b666d4e3055fdbba98598ce2ec307767b9064e03e2fa46676dbcc7d0bf8"
+}
+
+HYBRID TRACE REPLAY MEANS
+                     on_time_mean_pct  late_mean_pct  shed_mean_pct
+policy                                                             
+DA-BALS-Adaptive            60.405556       1.688889      37.905556
+DA-BALS-FixedMargin         62.655556       1.694444      35.650000
+DA-BALS-NoMargin            63.238889       3.733333      33.027778
+DA-BALS-Stabilized          63.350000       2.988889      33.661111
+
+PAIRED STABILIZED-MINUS-BASELINE COMPARISONS
+           baseline  pairs  mean_delta_pp  ci95_low_pp  ci95_high_pp      p_value  holm_p_value_3
+   DA-BALS-NoMargin     30       0.111111    -0.077608      0.299830 2.382645e-01    2.382645e-01
+DA-BALS-FixedMargin     30       0.694444     0.450885      0.938003 2.531740e-06    5.063481e-06
+   DA-BALS-Adaptive     30       2.944444     2.086551      3.802338 1.015886e-07    3.047657e-07
