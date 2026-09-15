@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+results/journal_raw_experiments.csv
+results/run_level_summary.csv
+hardware_decision_benchmark_summary.csv
+hardware_decision_benchmark_batches.csv
+hardware_decision_benchmark_environment.json

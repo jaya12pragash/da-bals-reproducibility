@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software or evidence package, please cite it using this metadata."
+title: "DA-BALS: Reproducibility Repository"
+type: software
+authors:
+  - family-names: Dakshnamurthy
+    given-names: Jayapragash
+    orcid: "https://orcid.org/0009-0009-6907-5282"
+repository-code: "https://github.com/jaya12pragash/da-bals-reproducibility"
+url: "https://github.com/jaya12pragash/da-bals-reproducibility"
+license: MIT
+version: 1.1.0
+date-released: 2026-09-15
+preferred-citation:
+  type: article
+  title: "Deadline-Aware Backpressure and Stabilized Adaptive Load Shedding for Reliable Cloud--Edge AI Inference"
+  authors:
+    - family-names: Dakshnamurthy
+      given-names: Jayapragash
+      orcid: "https://orcid.org/0009-0009-6907-5282"
+  year: 2026
